@@ -1,9 +1,19 @@
 define concatfile(
   $dir,
-  $owner = "0",
-  $group = "0",
-  $mode = "0644"
+  $owner = "",
+  $group = "",
+  $mode = ""
 ) {
+
+  if $owner != "" {
+    File { owner => $owner }
+  }
+  if $group != "" {
+    File { group => $group }
+  }
+  if $mode != "" {
+    File { mode => $mode }
+  }
 
   file {
     $dir:
@@ -11,16 +21,10 @@ define concatfile(
       checksum => mtime,
       recurse => true,
       purge => true,
-      mode => $mode,
-      owner => $owner,
-      group => $group,
       notify => Exec[$dir];
     $name:
       ensure => present,
       checksum => md5,
-      mode => $mode,
-      owner => $owner,
-      group => $group,
       notify => Exec[$dir];
   }
 

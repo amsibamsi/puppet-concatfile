@@ -100,7 +100,6 @@ sysctl::config {
 
 ## Todo
 
-* Any way to set an optional define parameter to a resource default value if not specified?
 * Triggering the update when the concatenated file is modified was not tested (did not have a puppet master around, and remembering checksums does not work completely with Puppet in standalone mode).
 
 
