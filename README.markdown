@@ -7,7 +7,7 @@ A very simple Puppet module that concatenates multiple text parts together to on
 ## Dependencies
 
 * Core utilities: <code>find, sort, xargs</code>
-* <code>dirname</code> function (provided)
+* <code>dirname</code> function, e.g. as provided by http://github.com/puzzle/puppet-common 
 * Tested on Puppet 0.25.4
 
 ## Usage
